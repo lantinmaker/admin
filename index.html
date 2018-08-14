@@ -6,10 +6,10 @@
 	<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
 	<style type="text/css" media="screen">
 		body{
-			background: #fafafa;
+			background: #f2f2f2;
 		}
 		.layui-main{
-			margin-top:10px;
+			margin-top:15px;
 		}
 
 		.layui-left-nav{
@@ -17,50 +17,89 @@
 			border-right:2px solid #f2f2f2;
 		}
 		.layui-left-nav li{
-			padding:10px;
+			width:100%;
+			overflow: hidden;
 		}
 		.layui-left-nav li:last-child{
 			border-bottom: 0px;
 		}
+		.layui-left-nav li a{
+			width:100%;
+			display: inline-block;
+			padding:15px 30px;
+			font-size: 14px;
+		}
+		.layui-left-nav .layui-this a{
+			background: #f2f2f2;
+		}
 		.layui-content{
 			padding:10px 20px;
+		}
+
+		.layui-container .logo{
+			width:50px;
+			height: 60px;
+    		line-height: 60px;
+    		float: left;
+    		display: inline-block;
+		}
+
+		.layui-container .logo img {
+		    width: auto;
+		    height: 50px;
+		    vertical-align: middle;
+		}
+		.layui-nav-child{
+			border:0px;
+			box-shadow: 0px 0px 16px rgba(0,0,0,0.05);
 		}
 	</style>
 </head>
 <body>
-	<header id="header" class="layui-bg-cyan">
-		<div class="layui-container">
-			<ul class="layui-nav layui-bg-cyan" lay-filter="">
-				<li class="layui-nav-item">
-					<img src="https://oss.aliyuncs.com/aliyun_id_photo_bucket/default_handsome.jpg" class="layui-nav-img" alt="">
-				</li>
-			  	<li class="layui-nav-item">
-			  		<a href="">
-			  			<i class="layui-icon layui-icon-component"></i>
-			  			首页
-			  		</a>
-			  	</li>
-			  	<li class="layui-nav-item layui-this">
-			  		<a href="">
-			  			<i class="layui-icon layui-icon-user"></i>
-			  			客户管理
-			  		</a>
-			  	</li>
-			  	<li class="layui-nav-item">
-			  		<a href="">
-			  			<i class="layui-icon layui-icon-video"></i>
-			  			视频管理
-			  		</a>
-			  	</li>
-			  	<li class="layui-nav-item">
-			    	<a href="" title="">
-			    		<i class="layui-icon layui-icon-util"></i>
-			    		信息管理
-			    	</a>
-			  	</li>
-			  	<li class="layui-nav-item"><a href="">社区</a></li>
-			</ul>
+	<div class="layui-layout layui-layout-admin">
+		<div class="layui-header">
+			<div class="layui-container">
+				<a href="" title="" class="logo">
+					<img src="https://oss.aliyuncs.com/aliyun_id_photo_bucket/default_handsome.jpg" alt="">
+				</a>
+				<ul class="layui-nav" lay-filter="">
+				  	<li class="layui-nav-item layui-this">
+				  		<a href="">
+				  			<i class="layui-icon layui-icon-home"></i>
+				  			首页
+				  		</a>
+				  	</li>
+				  	<li class="layui-nav-item">
+				  		<a href="">
+				  			<i class="layui-icon layui-icon-user"></i>
+				  			客户管理
+				  		</a>
+				  	</li>
+				  	<li class="layui-nav-item">
+				  		<a href="">
+				  			<i class="layui-icon layui-icon-video"></i>
+				  			视频管理
+				  		</a>
+				  	</li>
+				  	<li class="layui-nav-item">
+				    	<a href="" title="">
+				    		<i class="layui-icon layui-icon-util"></i>
+				    		信息管理
+				    	</a>
+				  	</li>
+				  	<li class="layui-nav-item"><a href="">社区</a></li>
+
+					<li class="layui-nav-item" style="float:right">
+						<a href="javascript:;" title="">用户1</a>
+						<dl class="layui-nav-child">
+					      	<dd><a href="">修改密码</a></dd>
+					      	<dd><a href="">退出</a></dd>
+					    </dl>
+					</li>
+				</ul>
+			</div>
 		</div>
+	</div>
 	</header><!-- /header -->
 	<div class="layui-container layui-main">
 		<div class="layui-card">
@@ -68,8 +107,24 @@
 				<div class="layui-row">
 					<div class="layui-col-xs2 layui-col-md-2">
 						<ul class="layui-left-nav">
-							<li><a href="" title="">ceshi</a></li>
-							<li><a href="" title="">ceshi</a></li>
+							<li class="layui-this">
+								<a href="" title="">
+									<i class="layui-icon layui-icon-console"></i> 
+									数据概览
+								</a>
+							</li>
+							<li>
+								<a href="" title="">
+									<i class="layui-icon layui-icon-user"></i>
+									客户统计
+								</a>
+							</li>
+							<li>
+								<a href="" title="">
+									<i class="layui-icon layui-icon-video"></i>
+									视频统计
+								</a>
+							</li>
 						</ul>
 					</div>
 					<div class="layui-col-xs9 layui-col-md-9">
