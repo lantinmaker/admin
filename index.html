@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+	<style type="text/css" media="screen">
+		body{
+			background: #fafafa;
+		}
+		.layui-main{
+			margin-top:10px;
+		}
+		.layui-card{
+			box-shadow: 0px 0px 16px rgba(0,0,0,0.05)
+		}
+	</style>
+</head>
+<body>
+	<header id="header" class="layui-bg-cyan">
+		<div class="layui-container">
+			<ul class="layui-nav layui-bg-cyan" lay-filter="">
+				<li class="layui-nav-item">
+					<img src="https://oss.aliyuncs.com/aliyun_id_photo_bucket/default_handsome.jpg" class="layui-nav-img" alt="">
+				</li>
+			  	<li class="layui-nav-item">
+			  		<a href="">
+			  			<i class="layui-icon layui-icon-component"></i>
+			  			首页
+			  		</a>
+			  	</li>
+			  	<li class="layui-nav-item layui-this">
+			  		<a href="">
+			  			<i class="layui-icon layui-icon-user"></i>
+			  			客户管理
+			  		</a>
+			  	</li>
+			  	<li class="layui-nav-item">
+			  		<a href="">
+			  			<i class="layui-icon layui-icon-video"></i>
+			  			视频管理
+			  		</a>
+			  	</li>
+			  	<li class="layui-nav-item">
+			    	<a href="" title="">
+			    		<i class="layui-icon layui-icon-util"></i>
+			    		信息管理
+			    	</a>
+			  	</li>
+			  	<li class="layui-nav-item"><a href="">社区</a></li>
+			</ul>
+		</div>
+	</header><!-- /header -->
+	<div class="layui-container layui-main">
+		<div class="layui-card">
+			<div class="layui-card-body">
+				ceshio 
+			</div>
+		</div>
+	</div>
+	
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script src="layui/layui.js"></script>
+	<script type="text/javascript">
+		layui.use("element" , function(){
+			var element = layui.element;
+		})
+	</script>
+</body>
+</html>
