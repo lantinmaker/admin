@@ -11,8 +11,19 @@
 		.layui-main{
 			margin-top:10px;
 		}
-		.layui-card{
-			box-shadow: 0px 0px 16px rgba(0,0,0,0.05)
+
+		.layui-left-nav{
+			width:100%;
+			border-right:2px solid #f2f2f2;
+		}
+		.layui-left-nav li{
+			padding:10px;
+		}
+		.layui-left-nav li:last-child{
+			border-bottom: 0px;
+		}
+		.layui-content{
+			padding:10px 20px;
 		}
 	</style>
 </head>
@@ -54,7 +65,19 @@
 	<div class="layui-container layui-main">
 		<div class="layui-card">
 			<div class="layui-card-body">
-				ceshio 
+				<div class="layui-row">
+					<div class="layui-col-xs2 layui-col-md-2">
+						<ul class="layui-left-nav">
+							<li><a href="" title="">ceshi</a></li>
+							<li><a href="" title="">ceshi</a></li>
+						</ul>
+					</div>
+					<div class="layui-col-xs9 layui-col-md-9">
+						<div class="layui-content">
+							asd
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
