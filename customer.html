@@ -34,7 +34,7 @@
 			background: #f2f2f2;
 		}
 		.layui-content{
-			padding:0px 20px;
+			padding:10px 20px;
 		}
 
 		.layui-container .logo{
@@ -61,9 +61,6 @@
 			background: #00bcd4;
 			height: 3px;
 		}
-		.layui-tip{
-			padding:10px 20px;
-		}
 	</style>
 </head>
 <body>
@@ -74,13 +71,13 @@
 					<img src="https://oss.aliyuncs.com/aliyun_id_photo_bucket/default_handsome.jpg" alt="">
 				</a>
 				<ul class="layui-nav" lay-filter="">
-				  	<li class="layui-nav-item layui-this">
+				  	<li class="layui-nav-item">
 				  		<a href="index.html">
 				  			<i class="layui-icon layui-icon-home"></i>
 				  			首页
 				  		</a>
 				  	</li>
-				  	<li class="layui-nav-item">
+				  	<li class="layui-nav-item layui-this">
 				  		<a href="customer.html">
 				  			<i class="layui-icon layui-icon-user"></i>
 				  			客户管理
@@ -120,36 +117,33 @@
 						<ul class="layui-left-nav">
 							<li class="layui-this">
 								<a href="" title="">
-									<i class="layui-icon layui-icon-console"></i> 
-									数据概览
-								</a>
-							</li>
-							<li>
-								<a href="" title="">
 									<i class="layui-icon layui-icon-user"></i>
-									客户统计
+									客户列表
 								</a>
 							</li>
 							<li>
 								<a href="" title="">
-									<i class="layui-icon layui-icon-video"></i>
-									视频统计
+									<i class="layui-icon layui-icon-senior"></i>
+									夫妻列表
 								</a>
 							</li>
 							<li>
 								<a href="" title="">
-									<i class="layui-icon layui-icon-template-1"></i>
-									流量引入
+									<i class="layui-icon layui-icon-star"></i>
+									客户评价
+								</a>
+							</li>
+							<li>
+								<a href="" title="">
+									<i class="layui-icon layui-icon-release"></i>
+									引流排行
 								</a>
 							</li>
 						</ul>
 					</div>
 					<div class="layui-col-xs10 layui-col-md-10">
 						<div class="layui-content">
-							<div class="layui-tip layui-bg-gray">
-								<p>提示：这是一段提示文字</p>
-							</div>
-							<hr class="layui-bg-gray">
+							asd
 						</div>
 					</div>
 				</div>
@@ -163,6 +157,8 @@
 		layui.use("element" , function(){
 			var element = layui.element;
 		})
+
+		
 	</script>
 </body>
 </html>

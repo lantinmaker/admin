@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+	<style type="text/css" media="screen">
+		body{
+			background: #f2f2f2;
+		}
+
+		img{
+			width:100%;
+		}
+
+		.layui-main{
+			margin-top:15px;
+		}
+
+		.layui-left-nav{
+			width:100%;
+			border-right:2px solid #f2f2f2;
+		}
+		.layui-left-nav li{
+			width:100%;
+			overflow: hidden;
+		}
+		.layui-left-nav li:last-child{
+			border-bottom: 0px;
+		}
+		.layui-left-nav li a{
+			width:100%;
+			display: inline-block;
+			padding:15px 30px;
+			font-size: 14px;
+		}
+		.layui-left-nav .layui-this a{
+			background: #f2f2f2;
+		}
+		.layui-content{
+			padding:0px 20px;
+		}
+
+		.layui-container .logo{
+			width:50px;
+			height: 60px;
+    		line-height: 60px;
+    		float: left;
+    		display: inline-block;
+		}
+
+		.layui-container .logo img {
+		    width: auto;
+		    height: 50px;
+		    vertical-align: middle;
+		}
+		.layui-nav-child{
+			border:0px;
+			box-shadow: 0px 0px 16px rgba(0,0,0,0.05);
+		}
+		.layui-layout-admin .layui-container .layui-nav:not(.layui-layout-right){
+			margin-left: 40px;
+		}
+		.layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after{
+			background: #00bcd4;
+			height: 3px;
+		}
+		.layui-tip{
+			padding:10px 20px;
+		}
+		.layui-text-tip{
+			padding:10px 0px;
+			color:#999;
+		}
+		.layui-box{
+			padding:16px;
+			border-radius: 0px;
+			font-size:12px;
+			box-shadow: 0px 0px 16px rgba(0,0,0,0.05)
+		}
+		.layui-box:hover{
+			box-shadow: 0px 0px 16px rgba(0,0,0,0.1)
+		}
+		.layui-box-title{
+
+		}
+
+		a.layui-tip{
+			display: inline-block;
+			padding:0px 6px;
+		}
+		.pull-right{
+			float:right;
+		}
+		.text-center{
+			text-align: center;
+		}
+		.text-right{
+			text-align: right;
+		}
+	</style>
+</head>
+<body>
+	<div class="layui-layout layui-layout-admin">
+		<div class="layui-header">
+			<div class="layui-container">
+				<a href="" title="" class="logo">
+					<img src="https://oss.aliyuncs.com/aliyun_id_photo_bucket/default_handsome.jpg" alt="">
+				</a>
+				<ul class="layui-nav" lay-filter="">
+				  	<li class="layui-nav-item">
+				  		<a href="index.html">
+				  			<i class="layui-icon layui-icon-home"></i>
+				  			首页
+				  		</a>
+				  	</li>
+				  	<li class="layui-nav-item">
+				  		<a href="customer.html">
+				  			<i class="layui-icon layui-icon-user"></i>
+				  			客户管理
+				  		</a>
+				  	</li>
+				  	<li class="layui-nav-item layui-this">
+				  		<a href="">
+				  			<i class="layui-icon layui-icon-video"></i>
+				  			视频管理
+				  		</a>
+				  	</li>
+				  	<li class="layui-nav-item">
+				    	<a href="" title="">
+				    		<i class="layui-icon layui-icon-util"></i>
+				    		信息管理
+				    	</a>
+				  	</li>
+				  	<li class="layui-nav-item"><a href="">社区</a></li>
+
+					<li class="layui-nav-item" style="float:right">
+						<a href="javascript:;" title="">用户1</a>
+						<dl class="layui-nav-child">
+					      	<dd><a href="">修改密码</a></dd>
+					      	<dd><a href="">退出</a></dd>
+					    </dl>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	</header><!-- /header -->
+	<div class="layui-container layui-main">
+		<div class="layui-card">
+			<div class="layui-card-body">
+				<div class="layui-row">
+					<div class="layui-col-xs12 layui-col-md-12">
+						<div class="layui-content">
+							<div class="layui-title">
+								<a href="" class="layui-btn layui-btn-danger" onclick="add_video()"><i class="layui-icon layui-icon-add-1"></i>新增视频</a>
+							</div>
+							<hr class="layui-bg-gray">
+							<div class="layui-row layui-col-space15">
+								<div class="layui-col-md3">
+									<div class="layui-box">
+										<div class="layui-box-title">
+											<span class=""><img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1243554232,3899848127&fm=27&gp=0.jpg" style="width:26px;height:26px;border-radius: 100%" alt=""></span>
+											<span>王先生与李小姐</span>
+											<span class="pull-right">
+												<a href="" class="layui-tip" title="" data-title="18518506037">
+													<span id="addr_tip_2">
+														<i class="layui-icon layui-icon-cellphone"></i>
+													</span>
+												</a>
+												<a href="" class="layui-tip" data-title="珠海市香洲区唐家湾镇海湾一号" >
+													<span id="addr_tip_1">
+														<i class="layui-icon layui-icon-location"></i>
+													</span>
+												</a>
+											</span>
+										</div>
+										<hr class="layui-bg-gray">
+										<div class="layui-box-body">
+											<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534484130828&di=867abbb9577ce55267b7d7bd611f0521&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F4034970a304e251f3b812fd5ac86c9177f3e53ad.jpg" alt="" style="border-radius: 4px;">
+											<div class="layui-text-tip">
+												<span>
+													<i class="layui-icon layui-icon-log"></i>
+													2018年11月8日 12:55:36
+												</span>
+											</div>
+										</div>
+										<hr class="layui-bg-gray" style="margin-top:0px;">
+										<div class="layui-box-footer">
+											<div class="layui-row">
+												<div class="layui-col-md4">
+													<i class="layui-icon layui-icon-praise"></i>
+													128
+												</div>
+												<div class="layui-col-md4 text-center">
+													<i class="layui-icon layui-icon-chat"></i>
+													104
+												</div>
+												<div class="layui-col-md4 text-right">
+													<i class="layui-icon layui-icon-chat"></i>
+													104
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-md3">
+									<div class="layui-box">
+										<div class="layui-box-title">
+											<span class=""><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2247827471,1885135124&fm=27&gp=0.jpg" style="width:26px;height:26px;border-radius: 100%" alt=""></span>
+											<span>王先生与李小姐</span>
+											<span class="pull-right">
+												<a href="" class="layui-tip" title="" data-title="18518506037">
+													<span id="addr_tip_2">
+														<i class="layui-icon layui-icon-cellphone"></i>
+													</span>
+												</a>
+												<a href="" class="layui-tip" data-title="珠海市香洲区唐家湾镇海湾一号" >
+													<span id="addr_tip_1">
+														<i class="layui-icon layui-icon-location"></i>
+													</span>
+												</a>
+											</span>
+										</div>
+										<hr class="layui-bg-gray">
+										<div class="layui-box-body">
+											<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534484130828&di=867abbb9577ce55267b7d7bd611f0521&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F4034970a304e251f3b812fd5ac86c9177f3e53ad.jpg" alt="" style="border-radius: 4px;">
+											<div class="layui-text-tip">
+												<span>
+													<i class="layui-icon layui-icon-log"></i>
+													2018年11月8日 12:55:36
+												</span>
+											</div>
+										</div>
+										<hr class="layui-bg-gray" style="margin-top:0px;">
+										<div class="layui-box-footer">
+											<div class="layui-row">
+												<div class="layui-col-md4">
+													<i class="layui-icon layui-icon-praise"></i>
+													128
+												</div>
+												<div class="layui-col-md4 text-center">
+													<i class="layui-icon layui-icon-chat"></i>
+													104
+												</div>
+												<div class="layui-col-md4 text-right">
+													<i class="layui-icon layui-icon-chat"></i>
+													104
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-md3">
+									<div class="layui-box">
+										<div class="layui-box-title">
+											<span class=""><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1283283363,2101295469&fm=27&gp=0.jpg" style="width:26px;height:26px;border-radius: 100%" alt=""></span>
+											<span>王先生与李小姐</span>
+											<span class="pull-right">
+												<a href="" class="layui-tip" title="" data-title="18518506037">
+													<span id="addr_tip_2">
+														<i class="layui-icon layui-icon-cellphone"></i>
+													</span>
+												</a>
+												<a href="" class="layui-tip" data-title="珠海市香洲区唐家湾镇海湾一号" >
+													<span id="addr_tip_1">
+														<i class="layui-icon layui-icon-location"></i>
+													</span>
+												</a>
+											</span>
+										</div>
+										<hr class="layui-bg-gray">
+										<div class="layui-box-body">
+											<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534484130828&di=867abbb9577ce55267b7d7bd611f0521&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F4034970a304e251f3b812fd5ac86c9177f3e53ad.jpg" alt="" style="border-radius: 4px;">
+											<div class="layui-text-tip">
+												<span>
+													<i class="layui-icon layui-icon-log"></i>
+													2018年11月8日 12:55:36
+												</span>
+											</div>
+										</div>
+										<hr class="layui-bg-gray" style="margin-top:0px;">
+										<div class="layui-box-footer">
+											<div class="layui-row">
+												<div class="layui-col-md4">
+													<i class="layui-icon layui-icon-praise"></i>
+													128
+												</div>
+												<div class="layui-col-md4 text-center">
+													<i class="layui-icon layui-icon-chat"></i>
+													104
+												</div>
+												<div class="layui-col-md4 text-right">
+													<i class="layui-icon layui-icon-chat"></i>
+													104
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-md3">
+									<div class="layui-box">
+										<div class="layui-box-title">
+											<span class=""><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4138095739,3513953709&fm=26&gp=0.jpg" style="width:26px;height:26px;border-radius: 100%" alt=""></span>
+											<span>王先生与李小姐</span>
+											<span class="pull-right">
+												<a href="" class="layui-tip" title="" data-title="18518506037">
+													<span id="addr_tip_2">
+														<i class="layui-icon layui-icon-cellphone"></i>
+													</span>
+												</a>
+												<a href="" class="layui-tip" data-title="珠海市香洲区唐家湾镇海湾一号" >
+													<span id="addr_tip_1">
+														<i class="layui-icon layui-icon-location"></i>
+													</span>
+												</a>
+											</span>
+										</div>
+										<hr class="layui-bg-gray">
+										<div class="layui-box-body">
+											<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534484130828&di=867abbb9577ce55267b7d7bd611f0521&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F4034970a304e251f3b812fd5ac86c9177f3e53ad.jpg" alt="" style="border-radius: 4px;">
+											<div class="layui-text-tip">
+												<span>
+													<i class="layui-icon layui-icon-log"></i>
+													2018年11月8日 12:55:36
+												</span>
+											</div>
+										</div>
+										<hr class="layui-bg-gray" style="margin-top:0px;">
+										<div class="layui-box-footer">
+											<div class="layui-row">
+												<div class="layui-col-md4">
+													<i class="layui-icon layui-icon-praise"></i>
+													128
+												</div>
+												<div class="layui-col-md4 text-center">
+													<i class="layui-icon layui-icon-chat"></i>
+													104
+												</div>
+												<div class="layui-col-md4 text-right">
+													<i class="layui-icon layui-icon-chat"></i>
+													104
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="layui-row layui-col-space15">
+								<div class="layui-col-md3">
+									<div class="layui-box">
+										<div class="layui-box-title">
+											<span class=""><img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1243554232,3899848127&fm=27&gp=0.jpg" style="width:26px;height:26px;border-radius: 100%" alt=""></span>
+											<span>王先生与李小姐</span>
+											<span class="pull-right">
+												<a href="" class="layui-tip" title="" data-title="18518506037">
+													<span id="addr_tip_2">
+														<i class="layui-icon layui-icon-cellphone"></i>
+													</span>
+												</a>
+												<a href="" class="layui-tip" data-title="珠海市香洲区唐家湾镇海湾一号" >
+													<span id="addr_tip_1">
+														<i class="layui-icon layui-icon-location"></i>
+													</span>
+												</a>
+											</span>
+										</div>
+										<hr class="layui-bg-gray">
+										<div class="layui-box-body">
+											<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534484130828&di=867abbb9577ce55267b7d7bd611f0521&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F4034970a304e251f3b812fd5ac86c9177f3e53ad.jpg" alt="" style="border-radius: 4px;">
+											<div class="layui-text-tip">
+												<span>
+													<i class="layui-icon layui-icon-log"></i>
+													2018年11月8日 12:55:36
+												</span>
+											</div>
+										</div>
+										<hr class="layui-bg-gray" style="margin-top:0px;">
+										<div class="layui-box-footer">
+											<div class="layui-row">
+												<div class="layui-col-md4">
+													<i class="layui-icon layui-icon-praise"></i>
+													128
+												</div>
+												<div class="layui-col-md4 text-center">
+													<i class="layui-icon layui-icon-chat"></i>
+													104
+												</div>
+												<div class="layui-col-md4 text-right">
+													<i class="layui-icon layui-icon-chat"></i>
+													104
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-md3">
+									<div class="layui-box">
+										<div class="layui-box-title">
+											<span class=""><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2247827471,1885135124&fm=27&gp=0.jpg" style="width:26px;height:26px;border-radius: 100%" alt=""></span>
+											<span>王先生与李小姐</span>
+											<span class="pull-right">
+												<a href="" class="layui-tip" title="" data-title="18518506037">
+													<span id="addr_tip_2">
+														<i class="layui-icon layui-icon-cellphone"></i>
+													</span>
+												</a>
+												<a href="" class="layui-tip" data-title="珠海市香洲区唐家湾镇海湾一号" >
+													<span id="addr_tip_1">
+														<i class="layui-icon layui-icon-location"></i>
+													</span>
+												</a>
+											</span>
+										</div>
+										<hr class="layui-bg-gray">
+										<div class="layui-box-body">
+											<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534484130828&di=867abbb9577ce55267b7d7bd611f0521&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F4034970a304e251f3b812fd5ac86c9177f3e53ad.jpg" alt="" style="border-radius: 4px;">
+											<div class="layui-text-tip">
+												<span>
+													<i class="layui-icon layui-icon-log"></i>
+													2018年11月8日 12:55:36
+												</span>
+											</div>
+										</div>
+										<hr class="layui-bg-gray" style="margin-top:0px;">
+										<div class="layui-box-footer">
+											<div class="layui-row">
+												<div class="layui-col-md4">
+													<i class="layui-icon layui-icon-praise"></i>
+													128
+												</div>
+												<div class="layui-col-md4 text-center">
+													<i class="layui-icon layui-icon-chat"></i>
+													104
+												</div>
+												<div class="layui-col-md4 text-right">
+													<i class="layui-icon layui-icon-chat"></i>
+													104
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-md3">
+									<div class="layui-box">
+										<div class="layui-box-title">
+											<span class=""><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1283283363,2101295469&fm=27&gp=0.jpg" style="width:26px;height:26px;border-radius: 100%" alt=""></span>
+											<span>王先生与李小姐</span>
+											<span class="pull-right">
+												<a href="" class="layui-tip" title="" data-title="18518506037">
+													<span id="addr_tip_2">
+														<i class="layui-icon layui-icon-cellphone"></i>
+													</span>
+												</a>
+												<a href="" class="layui-tip" data-title="珠海市香洲区唐家湾镇海湾一号" >
+													<span id="addr_tip_1">
+														<i class="layui-icon layui-icon-location"></i>
+													</span>
+												</a>
+											</span>
+										</div>
+										<hr class="layui-bg-gray">
+										<div class="layui-box-body">
+											<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534484130828&di=867abbb9577ce55267b7d7bd611f0521&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F4034970a304e251f3b812fd5ac86c9177f3e53ad.jpg" alt="" style="border-radius: 4px;">
+											<div class="layui-text-tip">
+												<span>
+													<i class="layui-icon layui-icon-log"></i>
+													2018年11月8日 12:55:36
+												</span>
+											</div>
+										</div>
+										<hr class="layui-bg-gray" style="margin-top:0px;">
+										<div class="layui-box-footer">
+											<div class="layui-row">
+												<div class="layui-col-md4">
+													<i class="layui-icon layui-icon-praise"></i>
+													128
+												</div>
+												<div class="layui-col-md4 text-center">
+													<i class="layui-icon layui-icon-chat"></i>
+													104
+												</div>
+												<div class="layui-col-md4 text-right">
+													<i class="layui-icon layui-icon-chat"></i>
+													104
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-md3">
+									<div class="layui-box">
+										<div class="layui-box-title">
+											<span class=""><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4138095739,3513953709&fm=26&gp=0.jpg" style="width:26px;height:26px;border-radius: 100%" alt=""></span>
+											<span>王先生与李小姐</span>
+											<span class="pull-right">
+												<a href="" class="layui-tip" title="" data-title="18518506037">
+													<span id="addr_tip_2">
+														<i class="layui-icon layui-icon-cellphone"></i>
+													</span>
+												</a>
+												<a href="" class="layui-tip" data-title="珠海市香洲区唐家湾镇海湾一号" >
+													<span id="addr_tip_1">
+														<i class="layui-icon layui-icon-location"></i>
+													</span>
+												</a>
+											</span>
+										</div>
+										<hr class="layui-bg-gray">
+										<div class="layui-box-body">
+											<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534484130828&di=867abbb9577ce55267b7d7bd611f0521&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F4034970a304e251f3b812fd5ac86c9177f3e53ad.jpg" alt="" style="border-radius: 4px;">
+											<div class="layui-text-tip">
+												<span>
+													<i class="layui-icon layui-icon-log"></i>
+													2018年11月8日 12:55:36
+												</span>
+											</div>
+										</div>
+										<hr class="layui-bg-gray" style="margin-top:0px;">
+										<div class="layui-box-footer">
+											<div class="layui-row">
+												<div class="layui-col-md4">
+													<i class="layui-icon layui-icon-praise"></i>
+													128
+												</div>
+												<div class="layui-col-md4 text-center">
+													<i class="layui-icon layui-icon-chat"></i>
+													104
+												</div>
+												<div class="layui-col-md4 text-right">
+													<i class="layui-icon layui-icon-chat"></i>
+													104
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script src="layui/layui.js"></script>
+	<script type="text/javascript">
+	
+		layui.use(["element" , "layer"] , function(){
+			var element = layui.element
+				,layer = layui.layer;
+
+				$(".layui-tip").mouseover(function() {
+					that = this;
+					msg = $(this).data('title');
+					lay_tip_index = layer.tips(
+						msg
+						, that 
+						, {
+							tips:1,
+							time:0
+						}
+					);
+				
+				}).mouseout(function() {
+					layer.close(lay_tip_index)
+				});;
+				
+		})
+	</script>
+</body>
+</html>
